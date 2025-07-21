@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+<section id="home" class="pt-5 mt-5 bg-light">
+    <div class="container d-flex flex-column flex-md-row align-items-center py-5">
+        <div class="text-center text-md-start mb-4 mb-md-0">
+            <h1 class="display-4">Hi, I'm <span class="text-warning">Sathya</span><br /> a Frontend Developer</h1>
+            <p class="lead">This is my responsive page created with HTML5, CSS, and React.</p>
+            <button class="btn btn-dark" onclick="location.href='{{ url_for('contact') }}'">Hire Me</button>
+        </div>
+        <div class="text-center ms-5">
+            <img src="{{ url_for('static', filename='images/portfolio_profile.png') }}" alt="Sathya" class="img-fluid" style="max-height: 500px;" />
+        </div>
+    </div>
+</section>
+
+<section id="about" class="bg-dark text-white py-5">
+    <div class="container">
+        <h1 class="text-center mb-4">About Me <br /> Developer <span class="text-warning">& Designer</span></h1>
+        <p class="lead text-center mx-auto" style="max-width: 800px;">
+            I am a front-end web developer. I can provide clean code and pixel-perfect design. I also make the website more interactive with web animations. Responsive design makes your website accessible to all users, regardless of their device.
+        </p>
+    </div>
+</section>
+
+<section id="skill" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center text-dark mb-4">My <span class="text-warning">Skills</span></h2>
+        <div class="row justify-content-center">
+            <div class="col-md-4 col-sm-6 mb-4 d-flex">
+                <div class="p-4 border rounded shadow-lg bg-dark text-white text-center flex-grow-1 d-flex flex-column">
+                    <h4 class="text-warning">React & JavaScript</h4>
+                    <p class="flex-grow-1">Building interactive UI components.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4 d-flex">
+                <div class="p-4 border rounded shadow-lg bg-dark text-white text-center flex-grow-1 d-flex flex-column">
+                    <h4 class="text-warning">HTML & CSS</h4>
+                    <p class="flex-grow-1">Creating clean, structured layouts.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4 d-flex">
+                <div class="p-4 border rounded shadow-lg bg-dark text-white text-center flex-grow-1 d-flex flex-column">
+                    <h4 class="text-warning">Bootstrap</h4>
+                    <p class="flex-grow-1">Leveraging the grid system for styling.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4 d-flex">
+                <div class="p-4 border rounded shadow-lg bg-dark text-white text-center flex-grow-1 d-flex flex-column">
+                    <h4 class="text-warning">Python</h4>
+                    <p class="flex-grow-1">Handling backend logic efficiently.</p>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 mb-4 d-flex">
+                <div class="p-4 border rounded shadow-lg bg-dark text-white text-center flex-grow-1 d-flex flex-column">
+                    <h4 class="text-warning">SQL</h4>
+                    <p class="flex-grow-1">Managing databases with optimized queries.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="project" class="py-5 bg-dark text-white">
+    <div class="container">
+        <h2 class="text-center mb-5">My <span class="text-warning">Projects</span></h2>
+        <div class="row gy-4">
+            {% for project in projects_data %}
+            <div class="col-md-4">
+                <div class="p-4 border rounded bg-light text-dark h-100 shadow text-center">
+                    <h5 class="text-warning">{{ project.name }}</h5>
+                    <p>{{ project.description }}</p>
+                    <a href="{{ project.link }}" class="btn btn-dark mt-3" target="_blank" rel="noopener noreferrer">
+                        Live Demo
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section id="contact-info" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center text-dark mb-4">Contact <span class="text-warning">Me</span></h2>
+        <div class="mx-auto mb-4 p-4 border rounded bg-white shadow" style="max-width: 600px;">
+            <h5 class="text-warning mb-3">My Contact Details</h5>
+            <p><strong>Email:</strong> sathyasiva735@gmail.com</p>
+            <p><strong>Phone:</strong> +91 88383 09023</p>
+            <p><strong>Address:</strong> 43/3C Mettu Street, Tirunelveli Town, Tirunelveli, Pincode: 627006</p>
+        </div>
+    </div>
+</section>
+{% endblock %}

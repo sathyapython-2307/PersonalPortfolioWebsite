@@ -1,0 +1,6 @@
+.animated-s {
+  font-size: 32px;
+  color: #ffc107;
+  animation:  2s linear infinite;
+  display: inline-block;
+}

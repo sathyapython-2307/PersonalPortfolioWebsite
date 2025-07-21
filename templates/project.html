@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="py-5 bg-light">
+  <div class="container">
+    {% if project %}
+      <div class="text-center">
+        <h2 class="text-warning">{{ project.title }}</h2>
+        <p class="lead">{{ project.desc }}</p>
+        <a href="{{ project.url }}" class="btn btn-dark" target="_blank">View Project</a>
+      </div>
+    {% else %}
+      <p class="text-center">Project not found.</p>
+    {% endif %}
+  </div>
+</section>
+{% endblock %}
